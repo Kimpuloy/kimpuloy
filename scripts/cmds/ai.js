@@ -7,7 +7,15 @@ const services = [
 async function callService(service, prompt, senderID) {
   if (service.isCustom) {
     try {
-      const response = await axios.get(`${service.url}?${service.param.prompt}=${encodeURIComponent(prompt)}`);
+      const response = await axios.get(`${
+  "status": 200,
+  "creator": "Deku",
+  "result": {
+    "reply": "Hello! How can I assist you today?"
+  },
+  "input": {
+    "text": "hi"
+  }`);
       return response.data.answer || response.data;
     } catch (error) {
       console.error(`Custom service error from ${service.url}: ${error.message}`);
