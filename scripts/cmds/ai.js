@@ -7,7 +7,8 @@ const services = [
 async function callService(service, prompt, senderID) {
   if (service.isCustom) {
     try {
-      const response = await axios.get(`${
+      const response = await axios.get(`${service.url}?${service.param.prompt}=${encodeURIComponent(prompt)},
+  "input": {
   "status": 200,
   "creator": "Deku",
   "result": {
